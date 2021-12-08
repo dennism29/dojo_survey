@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Survey Result</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/result_style.css' %}">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;800&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <h2>SUBMITTED INFO</h2>
+        <p>Name: <span>{{request.session.name}}</span></p>
+        <p>Dojo Location: <span>{{request.session.dojo_loc}}</span></p>
+        <p>Favorite Language: <span>{{request.session.fav_lang}}</span></p>
+        <p>Program: <span>{{request.session.program}}</span></p>
+        <p>What do you like from Coding Dojo:
+            {% for criteria in request.session.like %}
+                {% if forloop.last %}
+                    <span>{{criteria}}</span>
+                {% else %}
+                    <span>{{criteria}},</span>
+                {% endif %}  
+            {% endfor %}
+        </p>
+        <p>Comment: <span>{{request.session.comment}}</span></p>
+        <form action="back/">
+            <button type="submit">Get Back</button>
+        </form>
+    </div>  
+</body>
+</html>

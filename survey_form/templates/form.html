@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dojo Survey</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;800&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <form action="/result/" method="POST">
+            {% csrf_token %}
+            <label for="name">Your Name: </label>
+            <input type="text" id="name" name="name"><br>
+
+            <label for="loc">Dojo Location: </label>
+            <select name="dojo_loc" id="loc">
+                <option value="San Jose">San Jose</option>
+                <option value="Seattle">Seattle</option>
+                <option value="Dallas">Dallas</option>
+            </select><br>
+
+            <label for="lang">Favorite Language: </label>
+            <select name="fav_lang" id="lang">
+                <option value="Python">Python</option>
+                <option value="Javascript">JavaScript</option>
+                <option value="C#">C#</option>
+            </select>
+
+            <p>Program:</p>
+            <input type="radio" id="full_ons" name="program" value="Full-Time On-Site">
+            <label for="full_ons" class="option">Full-Time On-Site</label><br>
+            <input type="radio" id="full_onl" name="program" value="Full-Time Online">
+            <label for="full_onl" class="option">Full-Time Online</label><br>
+            <input type="radio" id="part_onl" name="program" value="Part-Time Online">
+            <label for="part_onl" class="option">Part-Time Online</label><br>
+
+            <p>What do you like about Coding Dojo:</p>
+            <input type="checkbox" id="loc_flex" name="like" value="Location Flexibility">
+            <label for="loc_flex" class="option">Location Flexibility</label><br>
+            <input type="checkbox" id="ins_ta" name="like" value="Instructors and TAs">
+            <label for="ins_ta" class="option">Instructors and TAs</label><br>
+            <input type="checkbox" id="cohort" name="like" value="Cohorts">
+            <label for="cohort" class="option">Cohorts</label><br>
+            <input type="checkbox" id="curriculum" name="like" value="Curriculum">
+            <label for="curriculum" class="option">Curriculum</label><br>
+            <input type="checkbox" id="career" name="like" value="Career Support">
+            <label for="career" class="option">Career Support</label><br>
+
+            <br><label for="comment">Comment (Optional): </label><br>
+            <textarea name="comment" id="comment" cols="40" rows="10"></textarea><br>
+
+            <button type="submit">Submit</button>
+        </form>
+    </div>
+</body>
+</html>

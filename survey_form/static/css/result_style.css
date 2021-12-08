@@ -1,0 +1,31 @@
+.container {
+    width: 400px;
+    padding: 10px;
+    margin: 0 auto;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 90%;
+    border: 5px solid #474505fa;
+    border-radius: 10px;
+    background-image: linear-gradient(white,#f9f5b8d9,#f5e82ed9);
+}
+h2 {
+    text-decoration: underline;
+    margin-top: 0;
+    color: #3d3b01fa;
+}
+p, button {
+    font-weight: 800;
+    color: #3d3b01fa;
+}
+span {
+    font-weight: 400;
+}
+button {
+    border: 2px solid #8b8904fa;
+    border-radius: 10px;
+    font-size: 120%;
+    text-align: center;
+    background-color: #fffb1afa;
+    box-shadow: 2px 2px 2px black;
+    margin-left: 150px;
+}
